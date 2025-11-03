@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button } from '@/components/ui/Button';
+import { useNavigate } from 'react-router-dom';
 
 export const HeroSection: React.FC = () => {
+  const navigate = useNavigate();
+  
   return (
     <header className="flex flex-col bg-blend-normal relative min-h-[800px] w-full overflow-hidden items-center pt-3 pb-[217px] px-20 max-md:max-w-full max-md:pb-[100px] max-md:px-5">
       <img
@@ -21,6 +24,7 @@ export const HeroSection: React.FC = () => {
                 size="md"
                 icon="https://api.builder.io/api/v1/image/assets/d0b6e100e3f94d1dbeda8e2b181952c0/0588a2c677c331bf756b9cfa211e2e6f0a6d6b41?placeholderIfAbsent=true"
                 className="bg-transparent border-none"
+                onClick={() => navigate('/plans')}
               >
                 Plans
               </Button>
@@ -33,7 +37,7 @@ export const HeroSection: React.FC = () => {
                 EN
               </Button>
             </div>
-            <Button variant="primary" size="md">
+            <Button variant="primary" size="md" onClick={() => navigate('/auth')}>
               Sign In
             </Button>
           </div>
